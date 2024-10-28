@@ -57,7 +57,7 @@ The Recipe Book App is a simple mobile application built using React Native, des
 1. Clone the repository:
    ```bash
    git clone https://github.com/Nyamosiyego/recipe.git
-   cd recipe-book-app
+   cd recipe
    ```
 
 2. Install dependencies using Bun:
@@ -67,7 +67,7 @@ The Recipe Book App is a simple mobile application built using React Native, des
 
 3. Run the app:
    ```bash
-   bun start
+   bun run
    ```
 
 ## Contribution
