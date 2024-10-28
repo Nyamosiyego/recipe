@@ -1,4 +1,3 @@
-// MyRecipesScreen.js
 import React, { useEffect } from 'react';
 import { View, Text, FlatList, TouchableOpacity, Image } from 'react-native';
 import tw from 'twrnc';
