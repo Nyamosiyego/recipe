@@ -23,7 +23,7 @@ The Recipe Book App is a simple mobile application built using React Native, des
 
      <img src="https://ecnxzvtyplnigjrbysia.supabase.co/storage/v1/object/public/recipe/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20Max%20-%202024-10-28%20at%2021.12.50.png" alt="Recipe Book App Screenshot" width="300"/>
      <img src="https://ecnxzvtyplnigjrbysia.supabase.co/storage/v1/object/public/recipe/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20Max%20-%202024-10-28%20at%2021.13.16.png" alt="Recipe Book App Screenshot" width="300"/>
-
+     <img src="https://ecnxzvtyplnigjrbysia.supabase.co/storage/v1/object/public/recipe/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20Max%20-%202024-10-28%20at%2021.18.31.png" alt="Recipe Book App Screenshot" width="300"/>
 3. **Recipe Details:** 
    - Users can tap on a recipe to view detailed information, including ingredients and cooking instructions.
    - A "Back" button allows easy navigation back to the main list. 🔙
