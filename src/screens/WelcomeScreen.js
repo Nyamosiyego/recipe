@@ -37,7 +37,7 @@ export default function WelcomeScreen() {
       </Animated.View>
 
         {/* title and punchline */}
-        <View style={tw`flex items-center space-y-2`}>
+        <View style={tw`flex items-center mt-2`}>
             <Text style={[tw`font-bold text-white tracking-widest`, {fontSize: hp(7)}]}>
                 Foody!
             </Text>

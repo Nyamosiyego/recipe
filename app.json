@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "recipe",
-    "slug": "recipe",
+    "slug": "recipe-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -22,6 +22,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "0b5ca115-a6f4-4c61-b4db-143fddaf8353"
+      }
+    },
+    "owner": "nyamosiyego"
   }
 }

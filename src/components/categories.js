@@ -6,13 +6,13 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import Animated, { FadeInDown } from 'react-native-reanimated';
 
 
-export default function Categories({activeCategory, setActiveCategory, categories}) {
+export default function Categories({activeCategory, handleChangeCategory, categories}) {
   return (
     <Animated.View entering={FadeInDown.duration(500).springify()}>
       <ScrollView
       horizontal
       showsHorizontalScrollIndicator={false}
-      style={tw`ml-4`}
+      style={tw`ml-2 mt-4`}
       contentContainerStyle={{paddingHorizontal: 15}}
       >
         {
@@ -22,8 +22,8 @@ export default function Categories({activeCategory, setActiveCategory, categorie
                 return (
                     <TouchableOpacity
                         key={index}
-                        onPress={()=> setActiveCategory(cat.strCategory)}
-                        style={tw`flex items-center mt-1`}
+                        onPress={()=> handleChangeCategory(cat.strCategory)}
+                        style={tw`flex items-center mt-1 mx-1`}
                     >
                         <View style={tw`rounded-full p-[6px] ${activeButtonClass}`}>
                             <Image 
