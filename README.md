@@ -36,6 +36,7 @@ The Recipe Book App is a simple mobile application built using React Native, des
    - A "Favorite" button to mark recipes as favorites ⭐ and filter the list accordingly.
   
      <img src="https://ecnxzvtyplnigjrbysia.supabase.co/storage/v1/object/public/recipe/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20Max%20-%202024-10-28%20at%2020.46.49.png" alt="Recipe Book App Screenshot" width="300"/>
+     <img src="https://ecnxzvtyplnigjrbysia.supabase.co/storage/v1/object/public/recipe/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20Max%20-%202024-10-28%20at%2021.07.08.png" alt="Recipe Book App Screenshot" width="300"/>
 
 ## Technologies Used
 - **React Native:** The core framework for building the app.
