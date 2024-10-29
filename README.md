@@ -4,6 +4,8 @@
 ## Overview
 The Recipe Book App is a simple mobile application built using React Native, designed to allow users to view, add, and explore various recipes. This project emphasizes component organization, state management, navigation, and creating a mobile-responsive layout.
 
+   <img src="https://ecnxzvtyplnigjrbysia.supabase.co/storage/v1/object/public/recipe/WhatsApp%20Video%202024-10-29%20at%2021.33.20.mp4?t=2024-10-29T18%3A39%3A09.934Z" alt="Recipe Book App Screenshot" width="300"/>
+
 ## Features
 1. **Recipe List:** 
    - Displays a list of recipe names with brief descriptions on the main screen.
