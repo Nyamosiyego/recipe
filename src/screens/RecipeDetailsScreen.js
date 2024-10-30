@@ -3,6 +3,7 @@ import {
   Text,
   ScrollView,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { StatusBar } from "expo-status-bar";
@@ -17,6 +18,7 @@ import { HeartIcon } from "react-native-heroicons/solid";
 import Loading from "../components/Loading";
 import axios from "axios";
 import Animated, { FadeInDown } from "react-native-reanimated";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import tw from 'twrnc';
 
 export default function RecipeDetailsScreen(props) {
@@ -28,7 +30,54 @@ export default function RecipeDetailsScreen(props) {
 
   useEffect(() => {
     getMealData(item.idMeal);
-  });
+    checkIfFavorite();
+  }, []); // Add empty dependency array to prevent infinite loop
+
+  const checkIfFavorite = async () => {
+    try {
+      const favorites = await AsyncStorage.getItem('favorites');
+      if (favorites !== null) {
+        const favoritesArray = JSON.parse(favorites);
+        const isCurrentMealFavorite = favoritesArray.some(
+          (favMeal) => favMeal.idMeal === item.idMeal
+        );
+        setIsFavourite(isCurrentMealFavorite);
+      }
+    } catch (error) {
+      console.error('Error checking favorites:', error);
+    }
+  };
+
+  const toggleFavorite = async () => {
+    try {
+      const favorites = await AsyncStorage.getItem('favorites');
+      let favoritesArray = favorites ? JSON.parse(favorites) : [];
+      
+      if (isFavourite) {
+        // Remove from favorites
+        favoritesArray = favoritesArray.filter(
+          (favMeal) => favMeal.idMeal !== item.idMeal
+        );
+        Alert.alert('Removed from favorites');
+      } else {
+        // Add to favorites
+        const recipeToSave = {
+          idMeal: item.idMeal,
+          strMeal: item.strMeal,
+          strMealThumb: item.strMealThumb,
+          strArea: meal?.strArea || item.strArea,
+        };
+        favoritesArray.push(recipeToSave);
+        Alert.alert('Added to favorites');
+      }
+      
+      await AsyncStorage.setItem('favorites', JSON.stringify(favoritesArray));
+      setIsFavourite(!isFavourite);
+    } catch (error) {
+      console.error('Error updating favorites:', error);
+      Alert.alert('Error', 'Could not update favorites');
+    }
+  };
 
   const getMealData = async (id) => {
     try {
@@ -102,7 +151,7 @@ export default function RecipeDetailsScreen(props) {
         </View>
 
         <View style={tw`p-2 rounded-full bg-white mr-5 shadow-lg`}>
-          <TouchableOpacity onPress={() => setIsFavourite(!isFavourite)}>
+          <TouchableOpacity onPress={toggleFavorite}>
             <HeartIcon
               size={hp(3.5)}
               color={isFavourite ? "#f64e32" : "gray"}
